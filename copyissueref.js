@@ -63,6 +63,11 @@
 		ref = trello();
 	}
 
-	alert('#' + ref.letter + ref.id + '#' + ' ' + ref.title);
+	if(ref) {
+		alert('#' + ref.letter + ref.id + '#' + ' ' + ref.title);
+	}
+	else {
+		alert('Error: This site is not handled.');
+	}
 	
 })();
