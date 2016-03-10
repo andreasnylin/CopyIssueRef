@@ -50,7 +50,7 @@
 
 	var ref;
 
-	if(location.hostname.indexOf('hansoft') != -1) {
+	if(location.hostname.indexOf('hansoft') != -1 || location.hostname.indexOf('favro') != -1) {
 		ref = hansoft();
 	}
 	else if(location.hostname.indexOf('agilezen') != -1) {
