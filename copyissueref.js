@@ -20,11 +20,11 @@
 		return new IssueRef('Z', id, title);
 	}
 
-	function hansoft() {
+	function favro() {
 		var id = document.querySelector('.cardpopup-id').innerText.replace('MET-', ''),
 			title = document.querySelector('.card-popup-card-title-wrapper .click-to-edit').innerText;
 
-		return new IssueRef('H', id, title);
+		return new IssueRef('F', id, title);
 	}
 
 	function trello() {
@@ -50,8 +50,8 @@
 
 	var ref;
 
-	if(location.hostname.indexOf('hansoft') != -1 || location.hostname.indexOf('favro') != -1) {
-		ref = hansoft();
+	if(location.hostname.indexOf('favro') != -1) {
+		ref = favro();
 	}
 	else if(location.hostname.indexOf('agilezen') != -1) {
 		ref = agilezen();
