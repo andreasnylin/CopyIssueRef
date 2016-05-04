@@ -29,7 +29,7 @@
 
 	function trello() {
 		var id = location.href.split('/').pop().split('-').unshift(),
-			title = document.querySelector('.window-title').innerText;
+			title = document.querySelector('.js-card-detail-title-input').value;
 		
 		return new IssueRef('T', id, title);
 	}
