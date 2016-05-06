@@ -28,7 +28,7 @@
 	}
 
 	function trello() {
-		var id = location.href.split('/').pop().split('-').unshift(),
+		var id = location.href.split('/').pop().split('-').shift(),
 			title = document.querySelector('.js-card-detail-title-input').value;
 		
 		return new IssueRef('T', id, title);
