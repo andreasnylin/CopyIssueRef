@@ -20,8 +20,8 @@
 		var modal = win['copyIssueRefModal'];
 		if(!modal) {
 			win['copyIssueRefModal'] = modal = document.createElement('div');
-			modal.style = 'position: absolute; top: 0; left: 0; right: 0; padding: 20px; background: rgba(0,0,0,.8); border: solid 2px silver; color: lime; font-family: monospace; font-size: 20px; text-align: center; transform: translate(0,-100%); transition: transform .25s';
-			modal.innerHTML = '<p id="copyIssueRefModalTxt" style="margin: 0 0 10px;"></p><p><button id="copyIssueRefModalBtn" style="display: block; width: 100%; padding: 10px; background: lime; border: none; color: black; font-family: monospace; font-size: 20px; cursor: pointer;">Copy</button></p>';
+			modal.style = 'position: absolute; top: 0; left: 0; right: 0; padding: 20px; background: rgba(0,0,0,.8); border: solid 2px silver; color: lime; font-family: monospace; font-size: 20px; text-align: center; transform: translate(0,-100%); transition: transform .25s; z-index: 999999;';
+			modal.innerHTML = '<p id="copyIssueRefModalTxt" style="margin: 0 0 10px; color: lime; font-family: monospace; font-size: 20px; text-align: center;"></p><p><button id="copyIssueRefModalBtn" style="display: block; width: 100%; padding: 10px; background: lime; border: none; color: black; font-family: monospace; font-size: 20px; cursor: pointer;">Copy</button></p>';
 			document.querySelector('body').appendChild(modal);
 			modal.querySelector('#copyIssueRefModalBtn').addEventListener('click', function(e) {
 				e.preventDefault();
@@ -116,6 +116,10 @@
 
 	if(ref && ref.isValid()) {
 		displayModal('#' + ref.letter + ref.id + '#' + ' ' + ref.title);
+	}
+	else if(ref && !ref.isValid()) {
+		alert('Error parsing issue ref.');
+		console.log(ref);
 	}
 	else {
 		alert('Error: This site is not handled.');
