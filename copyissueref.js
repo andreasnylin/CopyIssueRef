@@ -59,7 +59,7 @@
 
 	function agilezen() {
 		var id = doc.querySelector('#story-ref-number').innerText,
-			title = doc.querySelector('#story-text').innerText;
+			title = doc.querySelector('#story-text').innerText.trim;
 
 		return new IssueRef('A', id, title);
 	}
@@ -72,8 +72,8 @@
 	}
 
 	function favro() {
-		var id = doc.querySelector('.cardpopup-id').innerText.replace('MET-', ''),
-			title = doc.querySelector('.card-popup-card-title-wrapper .click-to-edit').innerText;
+		var id = doc.querySelector('.fui-btn.js-cardid').innerText.replace('MET-', '').trim(),
+			title = doc.querySelector('.card-details-title').value.trim();
 
 		return new IssueRef('F', id, title);
 	}
